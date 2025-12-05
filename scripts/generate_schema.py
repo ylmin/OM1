@@ -522,10 +522,10 @@ def main():
 
     try:
         schema_path = ConfigSchemaGenerator(root_dir).generate()
-        print(f"✓ Schema generated successfully: {schema_path}")
+        logging.info(f"✓ Schema generated successfully: {schema_path}")
         return 0
     except Exception as e:
-        print(f"✗ Error: {e}", file=sys.stderr)
+        logging.error(f"✗ Error: {e}")
         import traceback
 
         traceback.print_exc()
